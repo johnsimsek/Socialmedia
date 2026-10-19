@@ -1,0 +1,70 @@
+<!-- Centered Instagram + Facebook Floating Buttons -->
+<div class="social-center">
+  <!-- Instagram -->
+  <a
+    href="https://www.instagram.com/inkyvibestattoo?igshid=MzRlODBiNWFlZA%3D%3D"
+    target="_blank"
+    rel="noopener"
+    aria-label="Instagram"
+    class="social-btn"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon">
+      <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 2A3.75 3.75 0 0 0 4 7.75v8.5A3.75 3.75 0 0 0 7.75 20h8.5A3.75 3.75 0 0 0 20 16.25v-8.5A3.75 3.75 0 0 0 16.25 4h-8.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-.75a1.25 1.25 0 1 1-2.5 0 1.25 1.25 0 0 1 2.5 0Z"/>
+    </svg>
+  </a>
+
+  <!-- Facebook -->
+  <a
+    href="https://www.facebook.com/@inkyvibestattoo/?hr=1&wtsid=rdr_1QJeNeZeHrB6qlgdn"
+    target="_blank"
+    rel="noopener"
+    aria-label="Facebook"
+    class="social-btn"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon">
+      <path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/>
+    </svg>
+  </a>
+</div>
+
+<style>
+/* wrapper: fixed + centered horizontally */
+.social-center{
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 14px;
+  z-index: 9999;
+  /* iPhone safe area */
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* clean, not “foggy” on iOS */
+.social-btn{
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: linear-gradient(145deg, #e9e9e9, #bdbdbd);
+  box-shadow: 0 10px 22px rgba(0,0,0,.28);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.social-btn:hover{
+  transform: translateY(-2px) scale(1.06);
+  box-shadow: 0 14px 28px rgba(0,0,0,.32);
+}
+
+.icon{
+  width: 52%;
+  height: 52%;
+  fill: #fff;
+  display: block; /* prevents svg weird spacing */
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,.25));
+}
+</style>
