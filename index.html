@@ -35,30 +35,41 @@
   bottom: 24px;
   transform: translateX(-50%);
   display: flex;
-  gap: 10px; /* Reduced gap to bring them slightly closer */
+  gap: 12px;
   z-index: 9999;
   /* iPhone safe area */
   padding-bottom: env(safe-area-inset-bottom);
 }
 
-/* clean, not “foggy” on iOS */
 .social-btn {
-  width: 42px; /* Smaller width */
-  height: 42px; /* Smaller height */
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  position: relative;
+  overflow: hidden;
   
-  /* Matches your top nav and sidebar gradient */
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(40, 40, 40, 0.85), rgba(200, 200, 200, 0.55));
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  /* Thinner outer metal gradient rim */
+  background: linear-gradient(135deg, #ffffff 0%, #6b6b6b 25%, #e6e6e6 50%, #404040 75%, #ffffff 100%);
+  border-radius: 50%;
   
   box-shadow: 0 6px 16px rgba(0,0,0,.3);
   transition: transform .2s ease, box-shadow .2s ease;
+}
+
+/* Inner dark container with a very thin solid white circular border line */
+.social-btn::after {
+  content: "";
+  position: absolute;
+  inset: 1px; /* Very thin outer metal rim width */
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(40, 40, 40, 0.85), rgba(200, 200, 200, 0.55));
+  border: 0.6px solid #ffffff; /* Ultra-thin solid white inner circular line */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 .social-btn:hover {
@@ -67,10 +78,12 @@
 }
 
 .icon {
-  width: 50%;
-  height: 50%;
+  width: 44%;
+  height: 44%;
   fill: #fff;
-  display: block; /* prevents svg weird spacing */
+  display: block;
+  position: relative;
+  z-index: 2;
   filter: drop-shadow(0 1px 2px rgba(0,0,0,.5));
 }
 </style>
