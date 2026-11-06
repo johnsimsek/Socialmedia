@@ -35,15 +35,15 @@
   bottom: 24px;
   transform: translateX(-50%);
   display: flex;
-  gap: 12px;
+  gap: 10px; /* slightly tighter gap for smaller buttons */
   z-index: 9999;
   /* iPhone safe area */
   padding-bottom: env(safe-area-inset-bottom);
 }
 
 .social-btn {
-  width: 44px;
-  height: 44px;
+  width: 36px;  /* Reduced from 44px */
+  height: 36px; /* Reduced from 44px */
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -54,9 +54,8 @@
   
   /* Thinner outer metal gradient rim */
   background: linear-gradient(135deg, #ffffff 0%, #6b6b6b 25%, #e6e6e6 50%, #404040 75%, #ffffff 100%);
-  border-radius: 50%;
   
-  box-shadow: 0 6px 16px rgba(0,0,0,.3);
+  box-shadow: 0 5px 14px rgba(0,0,0,.3);
   transition: transform .2s ease, box-shadow .2s ease;
 }
 
@@ -74,7 +73,7 @@
 
 .social-btn:hover {
   transform: translateY(-2px) scale(1.06);
-  box-shadow: 0 10px 22px rgba(0,0,0,.4);
+  box-shadow: 0 8px 18px rgba(0,0,0,.4);
 }
 
 .icon {
